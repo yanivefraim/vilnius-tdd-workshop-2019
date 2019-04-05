@@ -12,6 +12,7 @@ function App() {
     ['', '', ''],
     ['', '', '']
   ]);
+  const [winner, setWinner] = useState('');
 
   const handleNewGame = (player1, player2) => {
     setPlayer1(player1);
@@ -20,6 +21,9 @@ function App() {
   const handleCellClicked = (rowIndex, colIndex) => {
     const _board = board.map(row => [...row]);
     _board[rowIndex][colIndex] = 'X';
+    if (_board[0].every(cell => cell === 'X')) {
+      setWinner('X');
+    }
     setBoard(_board);
   };
 
@@ -47,6 +51,7 @@ function App() {
         board={board}
         onCellClicked={handleCellClicked}
       />
+      {winner && <div data-testid="winner-message">Yaniv won!!</div>}
     </div>
   );
 }

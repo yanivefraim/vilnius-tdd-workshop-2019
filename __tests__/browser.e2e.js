@@ -17,11 +17,45 @@ test('should show "X" after first player click', async () => {
   await navigate();
 
   await newGame(player1, player2);
-  expect(await page.$$eval('td', tds => tds[0].innerText)).toBe('');
+  expect(await getACellAt(0)).toBe('');
 
-  await page.$$eval('td', tds => tds[0].click());
-  expect(await page.$$eval('td', tds => tds[0].innerText)).toBe('X');
+  await clickACellAt(0);
+  expect(await getACellAt(0)).toBe('X');
 });
+
+test('"X" should win the game', async () => {
+  const player1 = 'Yaniv';
+  const player2 = 'Computer';
+
+  await navigate();
+
+  await newGame(player1, player2);
+
+  await clickACellAt(0);
+  await clickACellAt(4);
+  expect(await hasWinner()).toBe(false);
+  await clickACellAt(1);
+  await clickACellAt(5);
+  await clickACellAt(2);
+
+  expect(await getWinnerMessage()).toBe(`${player1} won!!`);
+});
+
+function getWinnerMessage() {
+  return page.$eval('[data-testid="winner-message"]', el => el.innerText);
+}
+
+async function hasWinner() {
+  return !!(await page.$('[data-testid="winner-message"]'));
+}
+
+function clickACellAt(index) {
+  return page.$$eval('td', (tds, _index) => tds[_index].click(), index);
+}
+
+function getACellAt(index) {
+  return page.$$eval('td', (tds, _index) => tds[_index].innerText, index);
+}
 
 function getPlayer2Title() {
   return page.$eval('[data-testid="player2-title"]', el => el.innerText);
