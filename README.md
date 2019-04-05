@@ -25,6 +25,10 @@ May the force be with you.
 - Hide registration form when game starts.
 - Hide game during registration.
 - What happens if you enter the name "a"? That doesn't sound like a normal name. Make sure you only allow players with normal names 😈.
+- Finished before time? Bored? Implement a save game logic (to local storage). How whould you test it?
+- Finished the previous task? 😧 Add an option to play against the computer. Implement AI algorithm, so that the computer will never loose. How would you test it?
+
+<p align="center"><strong>Woohoo! You're done! 😀</strong></p>
 
 ### Instructions
 
