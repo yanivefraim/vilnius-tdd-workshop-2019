@@ -10,6 +10,19 @@ test('should register a game', async () => {
   expect(await getPlayer2Title()).toBe(player2);
 });
 
+test('should show "X" after first player click', async () => {
+  const player1 = 'Yaniv';
+  const player2 = 'Computer';
+
+  await navigate();
+
+  await newGame(player1, player2);
+  expect(await page.$$eval('td', tds => tds[0].innerText)).toBe('');
+
+  await page.$$eval('td', tds => tds[0].click());
+  expect(await page.$$eval('td', tds => tds[0].innerText)).toBe('X');
+});
+
 function getPlayer2Title() {
   return page.$eval('[data-testid="player2-title"]', el => el.innerText);
 }
