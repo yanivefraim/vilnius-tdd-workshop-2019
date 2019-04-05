@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🎲 Tic Tac Toe
 
-## Available Scripts
+> A TDD Workshop
 
-In the project directory, you can run:
+## Introduction
 
-### `npm start`
+This project contains a simple implementation of a [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe) game. We created it together but it's not yet finished. It's up to you to continue from this point and finish implementing the different parts of the game.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+May the force be with you.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## So far we:
 
-### `npm test`
+- Started off with E2E tests for a basic happy flow: From registration to a game between two players until the game is finished with first player winning the game.
+- Moved code to new components and remove code duplication. Tests are still green ✅.
+- Added simple validation logic to the registration phase and tested it with component tests.
+- Refactored game logic to a separate function and tested it with unit tests.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Now it's up to you to:
 
-### `npm run build`
+- Complete second player winning logic.
+- Complete game logic (rows, columns, diagonals, and tie).
+- What happens when you click an already occupied cell?
+- Show the player currently playing in bold.
+- Show the name of the player who won when the game is finished. What happens in case of a tie?
+- What happens if you enter the name "a"? That doesn't sound like a normal name. Make sure you only allow players with normal names 😈.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Instructions
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Start by forking this repository ([how do I fork?](https://help.github.com/articles/fork-a-repo/)) and clone your forked repo.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Next, install dependencies by running:
 
-### `npm run eject`
+```sh
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Then, start the app in one terminal by running:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+With another terminal, run your tests in watch mode (tip: use CMD + d):
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+npx jest --watch
+```
 
-## Learn More
+### Addiotional links
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [React testing library](https://testing-library.com/docs/intro)
+- [Puppeteer API reference](https://github.com/GoogleChrome/puppeteer/blob/v1.12.2/docs/api.md)
