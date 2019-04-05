@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Registration } from './Registration';
+import { Game } from './Game';
 
 class App extends Component {
+  state = {
+    player1: '',
+    player2: ''
+  };
+  handleNewGame = (player1, player2) => {
+    this.setState({ player1, player2 });
+  };
   render() {
     return (
       <div className="App">
@@ -21,6 +30,8 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <Registration onNewGame={this.handleNewGame} />
+        <Game player1={this.state.player1} player2={this.state.player2} />
       </div>
     );
   }
