@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Registration } from './Registration';
 import { Game } from './Game';
+import { gameStatus } from './gameService';
 
 function App() {
   const [player1, setPlayer1] = useState('');
@@ -21,7 +22,7 @@ function App() {
   const handleCellClicked = (rowIndex, colIndex) => {
     const _board = board.map(row => [...row]);
     _board[rowIndex][colIndex] = 'X';
-    if (_board[0].every(cell => cell === 'X')) {
+    if (gameStatus(_board) === 'X') {
       setWinner('X');
     }
     setBoard(_board);
