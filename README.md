@@ -22,6 +22,8 @@ May the force be with you.
 - What happens when you click an already occupied cell?
 - Show the player currently playing in bold.
 - Show the name of the player who won when the game is finished. What happens in case of a tie?
+- Hide registration form when game starts.
+- Hide game during registration.
 - What happens if you enter the name "a"? That doesn't sound like a normal name. Make sure you only allow players with normal names 😈.
 
 ### Instructions
