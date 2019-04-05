@@ -15,7 +15,11 @@ export function Registration({ onNewGame }) {
       />
       <button
         data-testid="new-game"
-        onClick={() => onNewGame(player1, player2)}
+        onClick={() => {
+          if (player1 && player2) {
+            onNewGame(player1, player2);
+          }
+        }}
       >
         New Game
       </button>
